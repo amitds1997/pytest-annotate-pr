@@ -1,0 +1,8 @@
+[run]
+omit = tests/*,venv/*
+
+[report]
+show_missing = true
+
+[json]
+pretty_print=true

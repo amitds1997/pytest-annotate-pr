@@ -13,5 +13,6 @@ run :
    python -m coverage json
    ```
    This generates a `coverage.json` report file.
+   This respects the `.coveragerc` file present in the root of the repository.
 2. Next, a Python script parses the file and generates `warning` annotations using the GitHub Check runs API. We only 
 generate `50` annotations in a single run since that's the limit specified by the API specifications.

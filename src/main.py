@@ -70,7 +70,7 @@ class CheckRun:
     def get_summary(self):
         number_of_annotations = len(self.annotations)
         total_coverage_files = self.coverage_output["files"].keys()
-        missing_coverage_file_count = sum([True if len(file_report['missing_lines'])
+        missing_coverage_file_count = sum([True if len(self.coverage_output["files"][file_report]["missing_lines"])
                                            else False for file_report in total_coverage_files])
         missing_ranges_count = number_of_annotations if number_of_annotations < 50 else "50+"
         summary = f"""
