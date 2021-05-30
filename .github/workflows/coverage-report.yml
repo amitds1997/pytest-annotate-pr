@@ -1,0 +1,16 @@
+on: [push, pull_request]
+
+jobs:
+  coverage-report:
+    runs-on: ubuntu-latest
+    name: Coverage report
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+        with:
+          fetch-depth: 0
+      - name: Generate coverage report
+        id: generate-coverage-report
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        uses: ./
